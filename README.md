@@ -16,17 +16,17 @@ In the tumultuous climate of the COVID-19 pandemic, nations globally faced unpar
 
 ## Data Exploration
 
-🗄️ **Data Source**: Our principal dataset for this investigation is acquired from Google's extensive open data collection, which chronicles COVID-19 details for a plethora of nations. For our study, we focused on extracting data pertinent to the UK, delving into its unique COVID-19 landscape. This rich dataset encapsulates a wide array of variables, including but not limited to confirmed cases, mortality rates, testing frequencies, hospitalization statistics, vaccination data, mobility trends, meteorological metrics, and the government's stringency index. The comprehensive nature of this data repository offers us an unparalleled window into the multifaceted dynamics of COVID-19, enriching the analytical depth of our project.
+🗄️ **Data Source**: Our primary dataset for this investigation is sourced from **Google's expansive open data collection**, which comprehensively documents COVID-19 details for numerous countries. To tailor our study to the UK's distinctive COVID-19 landscape, we selectively extracted relevant data. Notably, this dataset is **dynamically updated**, remaining current and relevant. For our analysis, we specifically focused on data from **2020 and 2021**, resulting in approximately **761 entries**. Within this dataset, a substantial pool of around 519 variables is available. Among these, we judiciously selected about **28 variables** that were most pertinent to our research objectives. These variables encompass a spectrum of information, including confirmed cases, mortality rates, testing frequencies, hospitalization statistics, vaccination data, mobility trends, meteorological metrics, and the government's stringency index. Despite the dataset's vastness, our focused selection ensures that we are equipped with the necessary data to delve into the intricate dynamics of COVID-19, elevating the depth of our analytical exploration.
 
-✂️ **Data Segmentation**: Our analysis segregates the data timeline into two pivotal eras - the _pre-vaccination_ and the _vaccination stages_. This bifurcation aids in a granular examination of various influencers like testing frequencies, mobility trajectories, stringency policies, and meteorological patterns across these two distinct phases. As we transition into the vaccination epoch, our scrutiny deepens to encapsulate the direct repercussions of vaccination on the metrics of confirmed cases, fatalities, and hospitalizations. 
+✂️ **Data Segmentation**: Our analysis segregates the data timeline into two pivotal eras - the **pre-vaccination** and the **vaccination** stages with 286 and 475 entries in each dataset respectively. This bifurcation aids in a granular examination of various influencers like testing frequencies, mobility trajectories, stringency policies, and meteorological patterns across these two distinct phases. As we transition into the vaccination epoch, our scrutiny deepens to encapsulate the direct repercussions of vaccination on the metrics of confirmed cases, fatalities, and hospitalizations. 
 
 ## Methodology
 
-Our endeavor to understand the profound impact of COVID-19 vaccinations in the UK led us to utilize **Multivariate Linear Regression (MLR)**, a potent statistical technique adept at revealing intricate relationships among multiple variables. Prior to delving into the specifics for the UK, we scrutinized the main dataset for multicollinearity. By identifying and removing correlated independent variables and static variables, we ensured the robustness of our subsequent analyses. Post this essential preprocessing step, we partitioned the data into two distinct phases for the UK - pre-vaccination and vaccination period capturing the evolving dynamics of the pandemic.
+In our pursuit of comprehending the significant impact of COVID-19 vaccinations within the UK, we adopted the **Multivariate Linear Regression (MLR)** technique. This powerful statistical tool excels at unveiling intricate relationships among multiple variables. Prior to diving into the specifics relevant to the UK, we meticulously examined the primary dataset for potential multicollinearity and static variables. Subsequently, we identified and retained 28 variables(as mentioned in Data Source section) that are closely aligned with our research objectives. The process involved discerning and addressing correlated independent variables and static elements, a step that fortified the resilience of our ensuing analyses. While our current approach emphasizes MLR, it's worth noting that **alternatives** such as **multivariate multiple regression and machine learning methods** could also be explored, particularly if certain variables exhibit collinearity.
 
 The implementation of the Multivariate Linear Regression (MLR) method involves the following steps:
 
-🔍 **Data Preprocessing**: Beyond the initial multicollinearity assessment, we meticulously managed missing data, cleaned our datasets, and ensured their uniformity.
+🔍 **Data Preprocessing**: Moving beyond the initial assessment of multicollinearity, we embarked on a meticulous journey of managing missing data. This involved adeptly substituting the gaps with zero values, thereby enhancing the integrity of the dataset. Furthermore, we undertook the task of formatting variables, rounding those with extensive decimals to streamline their representation. This process of uniform formatting contributes to a more coherent and comprehensible dataset, essential for our subsequent analyses.
 
 📊 **Exploratory Data Analysis (EDA):** This phase involved delving deep into variable distributions, discerning relationships, and identifying potential outliers to build a comprehensive understanding of our data.
 
@@ -72,7 +72,7 @@ For the pre-vaccination data, the forest plots offer a visual representation of 
 
 Extended the multivariate regression analysis to capture the dynamics post-vaccination.
 
-📈 **Performance:** Demonstrated an improved Mean Squared Error of 0.0702 on test data with R-squared values consistently over 0.80.The Root Mean Squared Error (RMSE) obtained is 0.2692. The model's performance on the vaccination data is even better than its performance on the pre-vaccination data. This is evident from the improved (lower) error metrics (both MSE and RMSE) and the consistently high R<sup>2</sup> values. The improvements suggest that the model is more accurate in predicting outcomes during the vaccination period compared to the pre-vaccination period.
+📈 **Performance:** Demonstrated an improved Mean Squared Error of 0.0702 on test data with R-squared values consistently over 0.80.The Root Mean Squared Error (RMSE) obtained is 0.2692. The model's performance on the vaccination data is even better than its performance on the pre-vaccination data. This is evident from the improved (lower) error metrics (both MSE and RMSE) and the consistently high R<sup>2</sup> values. The improvements suggest that the model is more accurate in predicting outcomes during the vaccination period compared to the pre-vaccination period. 
 
 🗝️ **Key Findings:**
 -	Significant negative correlation between the number of vaccinated individuals and infection cases, deceased cases, and hospitalizations.
@@ -81,9 +81,9 @@ Extended the multivariate regression analysis to capture the dynamics post-vacci
 
 #### Visualizations of the impact of multiple variables in the vaccination Multivariate Linear Regression model
 
-![Pre Vaccination Model Results](Images/Pre%20Vaccination%20Model%20Results.jpg)
+![Vaccination Model Results](Images/Vaccination%20Model%20Results.jpg)
 
-For the vaccination data, the above forest plots offer a visual representation of various factors and their associations with Covid-19 cases, deaths, and hospitalizations.
+For the vaccination data, the forest plots offer a visual representation of various factors and their associations with Covid-19 cases, deaths, and hospitalizations.
 
 ## Conclusion and Future Directions
 
@@ -99,9 +99,11 @@ iv) **Stringency measures** by governments, though effective to an extent, **yie
 
 v) **Weather**, intriguingly, has its indirect yet noteworthy influence, with **warmer climates showing a promising correlation with diminished infections**.
 
-In essence, the investigation underscores the importance of a multi-pronged approach to Covid-19 control, where testing, vaccination, controlled mobility, stringent government measures, and an understanding of weather interplays are vital in steering us towards a safer tomorrow.
+In essence, the investigation underscores the importance of a multi-pronged approach to Covid-19 control, where testing, vaccination, controlled mobility, stringent government measures, and an understanding of weather interplays are vital in steering us towards a safer tomorrow. 
 
-🔮 **Future Scope**: Future studies could probe the impact of vaccination on emerging COVID-19 variants, the role of vaccine boosters, and the synergistic effects of public health measures combined with vaccination.
+Amidst the insightful results, we encountered **intriguing contradictions**. Vaccination and the stringency index showed positive correlations with COVID-19 outcomes, while mobility factors exhibited a negative correlation. These anomalies arise from the intricate interplay of factors. High vaccination areas could have increased testing, leading to a heightened awareness of cases. Additionally, the increase in cases might be indicative of higher population density and connectivity in urban areas, where vaccination efforts are concentrated. While stringent measures might lead to temporary case surges. The negative correlation between mobility factors and COVID-19 outcomes could be attributed to reduced transmission opportunities in areas with decreased mobility.  These complexities underscore the **multifaceted nature of pandemic dynamics**.
+
+🔮 **Future Scope**: While our current analysis employs Multivariate Linear Regression (MLR) to explore the relationships between various variables and COVID-19 outcomes, it's important to acknowledge that more sophisticated analytical approaches are available. In the realm of advanced statistical techniques, methods such as **machine learning algorithms, time series modeling, and Bayesian analysis** offer alternative avenues for comprehending complex pandemic dynamics. These methods could potentially uncover nuanced interactions and non-linear relationships within the data. Additionally, future studies could probe the impact of vaccination on emerging COVID-19 variants, assess the **role of vaccine boosters** in maintaining immunity, and investigate the **synergistic effects of combining public health measures with vaccination strategies**. Considering these alternative approaches and expanding our research scope could provide a more comprehensive understanding of the multifaceted factors influencing COVID-19 outcomes. 
 
 ## Dependencies and Files
 
@@ -115,8 +117,8 @@ In essence, the investigation underscores the importance of a multi-pronged appr
 -	`UK Pre vaccination period.csv`: This file provides a comprehensive collection of COVID-19 statistics specifically before the initiation of vaccination campaigns. 
 -	`UK Vaccination period.csv`: Unlock insights into the COVID-19 metrics that unfold post the commencement of vaccination drives with this dataset. 
 -	`Data book.docx`: Curious about the variables driving the analysis? This document is your guide to the intricate details of each dataset variable. 
--	`Code and Interpretation.Rmd`: This R Markdown file encapsulates the heart of the project. Within its lines of code lies the key to analyzing, modeling, and interpreting the data. Explore the data pre-processing steps, multivariate linear regression models, and visualization techniques employed to derive meaningful insights from the datasets.
--	`Code-and-Interpretation.pdf`: If you're seeking a comprehensive summary of the project's journey, this PDF is your go-to resource. It condenses the entire analytical process into an accessible format. From data analysis and modeling to visualizations and conclusions, this document allows you to explore the project's insights without needing to dive into the code directly.
+-	`Code and Interpretation.Rmd`: This R Markdown file encapsulates the heart of the project. Within its lines of code lies the key to analyzing, modelling, and interpreting the data. Explore the data pre-processing steps, multivariate linear regression models, and visualization techniques employed to derive meaningful insights from the datasets.
+-	`Code-and-Interpretation.pdf`: If you're seeking a comprehensive summary of the project's journey, this PDF is your go-to resource. It condenses the entire analytical process into an accessible format. From data analysis and modelling to visualizations and conclusions, this document allows you to explore the project's insights without needing to dive into the code directly.
 Each of these files serves a unique purpose in unravelling the intricate dynamics of COVID-19 in the UK and the impact of vaccination campaigns.
 
 ## Authors and References
@@ -131,6 +133,7 @@ Each of these files serves a unique purpose in unravelling the intricate dynamic
 📚 **References**:
 
 Key academic sources and datasets used in the analysis are referenced for further exploration.
+
 1. Richard A. Johnson and Dean W. Wichern. [Multivariate Linear Regression Models in Applied Multivariate Statistical Analysis](https://ostad.hormozgan.ac.ir/ostad/UploadedFiles/863845/97050509-3761826667770356.pdf). (6th ed.) 360-418 Pearson Prentice Hall,2007.
 
 2. R. Suganya, R.Arunadevi, & Seyed M.Buhari. [COVID-19 Forecasting using Multivariate Linear Regression](https://www.researchsquare.com/article/rs-71963/v1). Research Square.
