@@ -115,7 +115,7 @@ In essence, the investigation underscores the importance of a multi-pronged appr
 -	`UK Pre vaccination period.csv`: This file provides a comprehensive collection of COVID-19 statistics specifically before the initiation of vaccination campaigns. 
 -	`UK Vaccination period.csv`: Unlock insights into the COVID-19 metrics that unfold post the commencement of vaccination drives with this dataset. 
 -	`Data book.docx`: Curious about the variables driving the analysis? This document is your guide to the intricate details of each dataset variable. 
--	`Code and Interpretation.Rmd`: This R Markdown file encapsulates the heart of the project. Within its lines of code lies the key to analyzing, modeling, and interpreting the data. Explore the data pre-processing steps, multivariate linear regression models, and visualization techniques employed to derive meaningful insights from the datasets.
+-	`Code-and-Interpretation.Rmd`: This R Markdown file encapsulates the heart of the project. Within its lines of code lies the key to analyzing, modeling, and interpreting the data. Explore the data pre-processing steps, multivariate linear regression models, and visualization techniques employed to derive meaningful insights from the datasets.
 -	`Code and Interpretation.pdf`: If you're seeking a comprehensive summary of the project's journey, this PDF is your go-to resource. It condenses the entire analytical process into an accessible format. From data analysis and modeling to visualizations and conclusions, this document allows you to explore the project's insights without needing to dive into the code directly.
 Each of these files serves a unique purpose in unravelling the intricate dynamics of COVID-19 in the UK and the impact of vaccination campaigns.
 
